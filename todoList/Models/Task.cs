@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using todoList.utils;
 
 namespace todoList.Models
 {
-    public class Tasks
+    public class Task
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -13,6 +14,6 @@ namespace todoList.Models
 
         public string Description { get; set; }
 
-        public TaskStatus status { get; set; }
+        public TodoTaskStatus Status { get; set; }
     }
 }
