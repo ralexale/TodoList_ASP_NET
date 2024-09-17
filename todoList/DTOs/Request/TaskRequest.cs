@@ -7,7 +7,5 @@ namespace todoList.DTOs.Request
         public string Title { get; set; }
 
         public string Description { get; set; }
-
-        public TodoTaskStatus Status { get; set; }
     }
 }

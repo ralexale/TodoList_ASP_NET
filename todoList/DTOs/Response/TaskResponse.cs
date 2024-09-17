@@ -10,6 +10,6 @@ namespace todoList.DTOs.Response
 
         public string Description { get; set; }
 
-        public TodoTaskStatus Status { get; set; }
+        public string Status { get; set; }
     }
 }

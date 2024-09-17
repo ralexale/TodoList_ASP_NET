@@ -11,7 +11,7 @@ namespace todoList.Services
 
         Task<bool> Delete(int id);
 
-        Task<TaskResponse?> Update(int id, TaskRequest taskRequest);
+        Task<TaskResponse?> Update(int id);
 
         Task<TaskResponse> Create(TaskRequest taskRequest);
     }
