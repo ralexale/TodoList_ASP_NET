@@ -31,7 +31,7 @@ namespace todoList.Services
             await _context.SaveChangesAsync();
 
             var taskResponse = new TaskResponse()
-            {
+            { 
                 Title = task.Title,
                 Description = task.Description,
                 Status =  task.Status,
@@ -57,7 +57,7 @@ namespace todoList.Services
 
         public async Task<IEnumerable<TaskResponse>> GetAll()
         {
-            var tasks = await _context.Tasks.Select(t => new TaskResponse
+            var tasks = await _context.Tasks.Where(t => t.Status != "completed").Select(t => new TaskResponse
             {
                 Id = t.Id,
                 Title = t.Title,
