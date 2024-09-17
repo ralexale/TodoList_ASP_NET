@@ -2,7 +2,7 @@
 using todoList.DTOs.Request;
 using todoList.DTOs.Response;
 using todoList.Models;
-using todoList.utils;
+
 
 namespace todoList.Services
 {
@@ -24,7 +24,7 @@ namespace todoList.Services
             {
                 Title = taskRequest.Title,
                 Description = taskRequest.Description,
-                Status =  taskRequest.Status
+                Status = "created"
             };
 
             await _context.Tasks.AddAsync(task);
@@ -47,7 +47,7 @@ namespace todoList.Services
 
             if (task == null) return false;
 
-            task.Status = TodoTaskStatus.Archived;
+            task.Status = "closed";
 
             await _context.SaveChangesAsync();
 
@@ -69,7 +69,7 @@ namespace todoList.Services
 
         public async Task<TaskResponse?> GetById(int id)
         {
-            var task = await _context.Tasks.FindAsync();
+            var task = await _context.Tasks.FindAsync(id);
 
             if (task == null) return null;
 
@@ -84,15 +84,15 @@ namespace todoList.Services
             return taskResponse;
         }
 
-        public async Task<TaskResponse?> Update(int id, TaskRequest taskRequest)
+        public async Task<TaskResponse?> Update(int id)
         {
-            var task = await _context.Tasks.FindAsync();
+            var task = await _context.Tasks.FindAsync(id);
 
             if (task == null) return null;
 
-            task.Description = taskRequest.Description;
-            task.Status = taskRequest.Status;
-            task.Title = taskRequest.Title;
+        
+            task.Status = "completed";
+    
 
             await _context.SaveChangesAsync();
 

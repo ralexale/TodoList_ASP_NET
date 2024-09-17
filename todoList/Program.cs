@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
-builder.Services.AddSingleton<ITaskService, TaskService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 // Entity Framework
 builder.Services.AddDbContext<TodoContext>(options =>
