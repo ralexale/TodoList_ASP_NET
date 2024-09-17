@@ -1,4 +1,6 @@
-﻿namespace todoList.DTOs.Request
+﻿using todoList.utils;
+
+namespace todoList.DTOs.Request
 {
     public class TaskRequest
     {
@@ -6,6 +8,6 @@
 
         public string Description { get; set; }
 
-        public TaskStatus status { get; set; }
+        public TodoTaskStatus Status { get; set; }
     }
 }

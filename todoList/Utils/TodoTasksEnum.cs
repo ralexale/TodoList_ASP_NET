@@ -1,7 +1,7 @@
 ﻿
 namespace todoList.utils
 {
-    public enum TaskStatus
+    public enum TodoTaskStatus
     {
         Pending,
         InProgress,

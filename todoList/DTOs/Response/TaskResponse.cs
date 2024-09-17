@@ -1,4 +1,6 @@
-﻿namespace todoList.DTOs.Response
+﻿using todoList.utils;
+
+namespace todoList.DTOs.Response
 {
     public class TaskResponse
     {
@@ -8,6 +10,6 @@
 
         public string Description { get; set; }
 
-        public TaskStatus status { get; set; }
+        public TodoTaskStatus Status { get; set; }
     }
 }
