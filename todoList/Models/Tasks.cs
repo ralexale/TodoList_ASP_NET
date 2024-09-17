@@ -13,6 +13,6 @@ namespace todoList.Models
 
         public string Description { get; set; }
 
-        public bool status { get; set; }
+        public TaskStatus status { get; set; }
     }
 }
